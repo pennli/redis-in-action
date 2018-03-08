@@ -95,7 +95,7 @@ def create_status(conn, uid, message, **data):          #H
         args.append(key)                                #I
         args.append(value)                              #I
 
-    return create_status_lua(                           #J
+    return create_status_lua(                           #J call the script
         conn, ['user:%s' % uid, 'status:id:'], args)    #J
 
 create_status_lua = script_load('''
